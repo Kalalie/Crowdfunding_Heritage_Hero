@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/HomePage";
 import Projects from "./Pages/Projects";
@@ -22,7 +23,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 
 export default App;
