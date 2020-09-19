@@ -1,11 +1,8 @@
-.logo {
-  width: 10px;
-  height: 10px;
-}
-
 #project-list {
   display: grid;
   grid-template-columns: 30% 30% 30%;
   column-gap: 10px;
   row-gap: 10px;
+  margin: 30px;
+  justify-content: space-around;
 }
