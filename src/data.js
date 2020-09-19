@@ -45,7 +45,7 @@ export const allProjects = [
 
 export const oneProject = {
   id: 1,
-  title: "Project tw11111111o",
+  title: "Project one",
   description: "The second project.",
   goal: 150,
   image: "https://via.placeholder.com/300.jpg",

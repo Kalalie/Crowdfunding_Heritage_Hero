@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import Logo from "./Components/Logo/Logo";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/HomePage";
 import Projects from "./Pages/Projects";
@@ -12,7 +13,7 @@ function App() {
     <Router>
       <div>
         <Nav />
-
+        <Logo image={require("./Assets/HeritageHeroLogo.png")} />
         <Switch>
           <Route path="/Projects">
             <Projects />

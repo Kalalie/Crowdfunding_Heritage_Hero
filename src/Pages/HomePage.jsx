@@ -1,6 +1,7 @@
 import React from "react";
 import { allProjects } from "../data";
 import ProjectCard from "../Components/ProjectCard/ProjectCard";
+import Logo from "../Components/Logo/Logo";
 
 function HomePage() {
   return (
