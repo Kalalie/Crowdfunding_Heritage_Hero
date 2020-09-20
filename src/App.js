@@ -4,6 +4,8 @@ import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/HomePage";
 import Projects from "./Pages/Projects";
+import Footer from "./Components/Footer/Footer";
+import FeaturedImage from "./Components/FeaturedImage/FeaturedImage";
 
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -13,6 +15,7 @@ function App() {
     <Router>
       <div>
         <Nav image={require("./Assets/HeritageHeroLogo.png")} />
+        <FeaturedImage image={require("./Assets/MotheChandeniers.jpg")} />
         <Switch>
           <Route path="/Projects">
             <Projects />
@@ -21,6 +24,7 @@ function App() {
             <Home />
           </Router>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

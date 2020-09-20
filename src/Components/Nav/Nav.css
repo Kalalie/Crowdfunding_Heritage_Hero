@@ -2,7 +2,6 @@ nav {
   padding: 0 50px;
   display: flex;
   align-items: center;
-  border: red solid 10px;
 }
 
 nav a {
