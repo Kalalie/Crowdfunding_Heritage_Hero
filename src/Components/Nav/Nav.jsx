@@ -12,10 +12,10 @@ function Nav(props) {
       </div>
       <div className="Menu">
         <Link to="/">Home</Link>
-      </div>
-      <SearchBar />
-      <div className="ButtonPosition">
-        <button id="Button"> Log in</button>
+        <div className="ButtonPosition">
+          <SearchBar />
+          <button id="Button"> Log in</button>
+        </div>
       </div>
     </div>
   );

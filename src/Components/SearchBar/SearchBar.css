@@ -1,22 +1,28 @@
-.Search {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
+.SearchBar {
+  font-size: 16px;
   float: left;
   width: 80%;
-  background: #f1f1f1;
-  border: red solid 30px;
+  border: none;
+  padding: 10px 22px;
+  position: relative;
+  padding: 6px 6px;
+  left: -15px;
+  color: #fafafa;
 }
 
-/* Style the submit button */
-.Search {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196f3;
+input[type="submit"] {
+  border: none;
+  font-size: 14px;
+  margin: 5px;
+  background-color: #00073d;
+  color: #fffcef;
+  padding: 13px 22px;
+}
+
+input[type="search"] {
+  border: none;
   color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid #00073d;
 }

@@ -12,7 +12,7 @@ function SearchBar(props) {
     // alert(`Submitting search ${search}`);
   };
   return (
-    <div className="Search">
+    <div className="SearchBar">
       <form onSubmit={handleSubmit}>
         <label>
           <input
@@ -21,7 +21,7 @@ function SearchBar(props) {
             onChange={(e) => setInput(e.target.value)}
           />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="Submit" value="Submit" />
       </form>
     </div>
   );
