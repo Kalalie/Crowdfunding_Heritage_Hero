@@ -4,5 +4,8 @@
   color: #fffcef;
   height: 50px;
   display: flex;
-  justify-content: center;
+  font-family: Montserrat;
+}
+
+.footer-links {
 }

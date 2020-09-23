@@ -6,3 +6,9 @@
   margin: 30px;
   justify-content: space-around;
 }
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: #00073d;
+}

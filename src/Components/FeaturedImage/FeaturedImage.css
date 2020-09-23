@@ -1,7 +1,4 @@
 .featured-image {
-  width: 130%;
-  background-size: cover;
-  border: solid red 10px;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/HomePage";
@@ -10,19 +11,22 @@ import FeaturedImage from "./Components/FeaturedImage/FeaturedImage";
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
 
+const history = createBrowserHistory();
+
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <div>
         <Nav image={require("./Assets/HeritageHeroLogo.png")} />
         <FeaturedImage image={require("./Assets/MotheChandeniers.jpg")} />
+        <h1> Opened Projects </h1>
         <Switch>
-          <Route path="/Projects">
+          <Route path="/Projects/id:">
             <Projects />
           </Route>
-          <Router path="/">
+          <Route path="/">
             <Home />
-          </Router>
+          </Route>
         </Switch>
         <Footer />
       </div>

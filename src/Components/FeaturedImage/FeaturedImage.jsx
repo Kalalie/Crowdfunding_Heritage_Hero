@@ -1,4 +1,5 @@
 import React from "react";
+import "./FeaturedImage.css";
 
 function FeaturedImage(props) {
   //variables

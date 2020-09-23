@@ -9,7 +9,7 @@ function ProjectCard(props) {
   // template
   return (
     <div className="project-card">
-      <Link to="/projects">
+      <Link to={`/project/${projectData.id}`}>
         <img src={projectData.image} />
         <h3 className="card-title">{projectData.title}</h3>
         <div className="card-details">

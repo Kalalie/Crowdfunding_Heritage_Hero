@@ -1,20 +1,30 @@
-import React from "react";
-import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
+import React, { useState } from "react";
+import "./SearchBar.css";
+import { useHistory } from "react-router-dom";
 
-const SearchPage = () => {
+function SearchBar(props) {
+  const [search, setInput] = useState("");
+  let history = useHistory();
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    history.push({ pathname: "/", search: `?q=${search}` });
+    // alert(`Submitting search ${search}`);
+  };
   return (
-    <MDBCol md="6">
-      <MDBFormInline className="md-form">
-        <MDBIcon icon="search" />
-        <input
-          className="form-control form-control-sm ml-3 w-75"
-          type="text"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </MDBFormInline>
-    </MDBCol>
+    <div className="Search">
+      <form onSubmit={handleSubmit}>
+        <label>
+          <input
+            type="Search"
+            value={search}
+            onChange={(e) => setInput(e.target.value)}
+          />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
   );
-};
+}
 
-export default SearchPage;
+export default SearchBar;
