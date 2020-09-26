@@ -14,7 +14,17 @@ function Nav(props) {
         <Link to="/">Home</Link>
         <div className="ButtonPosition">
           <SearchBar />
-          <button id="Button"> Log in</button>
+          
+          <button className="Button">
+            <Link to="/login">Login</Link>
+            {/* {loggedIn ? <> : <>} */}
+          </button>
+          </div>
+          <div>
+          <button className="Button">
+            <Link to="/Signup">Sign up</Link>
+          </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,11 +1,8 @@
 .footer {
-  text-align: center;
   background-color: #00073d;
   color: #fffcef;
-  height: 50px;
   display: flex;
-  font-family: Montserrat;
-}
-
-.footer-links {
+  flex-direction: column;
+  align-items: end;
+  padding: 15px;
 }

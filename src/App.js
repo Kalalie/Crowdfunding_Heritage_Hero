@@ -5,8 +5,8 @@ import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/HomePage";
 import Projects from "./Pages/Projects";
-import Footer from "./Components/Footer/Footer";
-import FeaturedImage from "./Components/FeaturedImage/FeaturedImage";
+import LoginPage from "./Pages/LoginPage";
+import SignupPage from "./Pages/SignupPage";
 
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -18,17 +18,20 @@ function App() {
     <Router history={history}>
       <div>
         <Nav image={require("./Assets/HeritageHeroLogo.png")} />
-        <FeaturedImage image={require("./Assets/MotheChandeniers.jpg")} />
-        <h1> Opened Projects </h1>
         <Switch>
           <Route path="/Projects/id:">
             <Projects />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route path="/signup">
+            <SignupPage />
           </Route>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
-        <Footer />
       </div>
     </Router>
   );
