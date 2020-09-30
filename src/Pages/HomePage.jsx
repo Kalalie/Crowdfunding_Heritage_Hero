@@ -33,7 +33,7 @@ function HomePage() {
   return (
     <div>
       <FeaturedImage image={require("../Assets/MotheChandeniers.jpg")} />
-      <h1> Opened Projects </h1>;
+      <h1> Projects </h1>;
       <div id="project-list">
         {projectList.map((projectData, key) => {
           return <ProjectCard key={key} projectData={projectData} />;

@@ -4,6 +4,13 @@
   align-items: center;
 }
 
+.Menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .nav a {
   color: #00073d;
   padding: 15px 15px;

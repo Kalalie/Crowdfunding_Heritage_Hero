@@ -21,7 +21,7 @@ function SearchBar(props) {
             onChange={(e) => setInput(e.target.value)}
           />
         </label>
-        <input type="Submit" value="Submit" />
+        <input type="Submit" onChange={handleSubmit} value="Submit" />
       </form>
     </div>
   );

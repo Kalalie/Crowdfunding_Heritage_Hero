@@ -1,0 +1,15 @@
+.text404 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#Button404 {
+  border: none;
+  color: #fffcef;
+  padding: 15px 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+}

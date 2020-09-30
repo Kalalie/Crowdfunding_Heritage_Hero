@@ -7,6 +7,8 @@ import Home from "./Pages/HomePage";
 import Projects from "./Pages/Projects";
 import LoginPage from "./Pages/LoginPage";
 import SignupPage from "./Pages/SignupPage";
+import NotFound from "./Components/404Page/404";
+import CreateProject from "./Pages/CreateProject";
 
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -19,7 +21,7 @@ function App() {
       <div>
         <Nav image={require("./Assets/HeritageHeroLogo.png")} />
         <Switch>
-          <Route path="/Projects/id:">
+          <Route path="/project/:id">
             <Projects />
           </Route>
           <Route path="/login">
@@ -28,8 +30,14 @@ function App() {
           <Route path="/signup">
             <SignupPage />
           </Route>
-          <Route path="/">
+          <Route path="/create-project">
+            <CreateProject />
+          </Route>
+          <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="*" component={NotFound}>
+            <NotFound />
           </Route>
         </Switch>
       </div>
