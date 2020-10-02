@@ -11,7 +11,7 @@ label {
   flex-direction: column;
 }
 
-.ButtonLogin {
+#ButtonSignup {
   color: white;
   background-color: #00073d;
   border: none;
@@ -24,7 +24,7 @@ label {
   width: 30%;
 }
 
-.LoginForm {
+#SignupForm {
   display: flex;
   flex-direction: column;
   align-content: center;

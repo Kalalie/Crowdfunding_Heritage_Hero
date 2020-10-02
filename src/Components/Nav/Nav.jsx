@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import "./Nav.css";
-import SearchBar from "../SearchBar/SearchBar";
 
 function Nav(props) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -31,7 +30,6 @@ function Nav(props) {
           <Link to="/create-project">Create Project</Link>
         </div>
         <div className="ButtonPosition">
-          <SearchBar />
           {!loggedIn ? (
             <>
               <button className="Button">

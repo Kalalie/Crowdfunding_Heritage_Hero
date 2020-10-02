@@ -1,28 +1,35 @@
+.SearchItem {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+}
 .SearchBar {
   font-size: 16px;
-  float: left;
-  width: 80%;
   border: none;
-  padding: 10px 22px;
-  position: relative;
-  padding: 6px 6px;
-  left: -15px;
   color: #fafafa;
+  margin: 5px;
 }
 
-input[type="submit"] {
-  border: none;
+.SearchSubmit {
   font-size: 14px;
-  margin: 5px;
-  background-color: #00073d;
   color: #fffcef;
-  padding: 13px 22px;
 }
 
 input[type="search"] {
   border: none;
-  color: white;
+  color: #00073d;
   font-size: 16px;
-  padding: 10px 20px;
   border: 1px solid #00073d;
+  width: 300px;
+}
+
+input[type="submit"] {
+  border: none;
+  color: white;
+  background-color: #00073d;
+  font-size: 16px;
+  width: 100px;
+  height: 45px;
 }

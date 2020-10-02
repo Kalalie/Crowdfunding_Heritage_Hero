@@ -3,6 +3,7 @@ import ProjectCard from "../Components/ProjectCard/ProjectCard";
 import { useLocation } from "react-router-dom";
 import FeaturedImage from "../Components/FeaturedImage/FeaturedImage";
 import Footer from "../Components/Footer/Footer";
+import SearchBar from "../Components/SearchBar/SearchBar";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -33,7 +34,8 @@ function HomePage() {
   return (
     <div>
       <FeaturedImage image={require("../Assets/MotheChandeniers.jpg")} />
-      <h1> Projects </h1>;
+      <h1> Projects </h1>
+      <SearchBar />
       <div id="project-list">
         {projectList.map((projectData, key) => {
           return <ProjectCard key={key} projectData={projectData} />;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./SignupForm.css";
 
 function SignupForm() {
   // variables
@@ -49,45 +50,47 @@ function SignupForm() {
   //template
   return (
     <form>
-      <div>
-        <label htmlFor="full_name"> Full Name:</label>
-        <input
-          type="text"
-          id="full_name"
-          placeholder="Enter Full Name"
-          onChange={handleChange}
-        />
+      <div id="SignupForm">
+        <div>
+          <label htmlFor="full_name"> Full Name:</label>
+          <input
+            type="text"
+            id="full_name"
+            placeholder="Enter Full Name"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="username"> Username:</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter username"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password"> Password:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="email"> Email:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter email"
+            onChange={handleChange}
+          />
+        </div>
+        <button id="ButtonSignup" type="submit" onClick={handleSubmit}>
+          Sign up
+        </button>
       </div>
-      <div>
-        <label htmlFor="username"> Username:</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Enter username"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password"> Password:</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter password"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="email"> Email:</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter email"
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit" onClick={handleSubmit}>
-        Signup
-      </button>
     </form>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./CreateProjectForm.css";
 
 function CreateProjectForm() {
   // variables
@@ -53,7 +54,7 @@ function CreateProjectForm() {
 
   //template
   return (
-    <form>
+    <form className="ProjectForm">
       <div>
         <label htmlFor="title"> Title:</label>
         <input
@@ -103,7 +104,11 @@ function CreateProjectForm() {
         <label htmlFor="image"> Image:</label>
         <input type="url" id="image" onChange={handleChange} />
       </div>
-      <button type="submit" onClick={handleSubmit}>
+      <button
+        className="ButtonCreateProject"
+        type="submit"
+        onClick={handleSubmit}
+      >
         Create Project
       </button>
     </form>

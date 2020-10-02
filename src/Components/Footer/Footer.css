@@ -3,6 +3,7 @@
   color: #fffcef;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: end;
-  padding: 15px;
+  padding: 20px;
 }

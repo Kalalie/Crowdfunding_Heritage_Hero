@@ -12,18 +12,22 @@ function SearchBar(props) {
     // alert(`Submitting search ${search}`);
   };
   return (
-    <div className="SearchBar">
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-            type="Search"
-            value={search}
-            onChange={(e) => setInput(e.target.value)}
-          />
-        </label>
-        <input type="Submit" onChange={handleSubmit} value="Submit" />
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div className="SearchItem">
+        <div className="SearchBar">
+          <label>
+            <input
+              type="Search"
+              value={search}
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="SearchSubmit">
+          <input type="submit" onChange={handleSubmit} value="Search" />
+        </div>
+      </div>
+    </form>
   );
 }
 

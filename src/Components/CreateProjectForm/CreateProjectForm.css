@@ -11,7 +11,7 @@ label {
   flex-direction: column;
 }
 
-.ButtonLogin {
+.ButtonCreateProject {
   color: white;
   background-color: #00073d;
   border: none;
@@ -24,7 +24,7 @@ label {
   width: 30%;
 }
 
-.LoginForm {
+.ProjectForm {
   display: flex;
   flex-direction: column;
   align-content: center;
