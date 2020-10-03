@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Pledges.css";
 
-function Pledges() {
+function Pledges({ projectData }) {
   // variables
-  const [credentials, setCredentials] = useState({
+  const [Pledge, setPledge] = useState({
     project_id: "",
     amount: "",
     comment: "",
@@ -17,14 +17,16 @@ function Pledges() {
   // methods
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setCredentials((prevCredentials) => ({
-      ...prevCredentials,
+    setPledge((newPledge) => ({
+      ...newPledge,
       [id]: value,
     }));
   };
 
   const postData = async () => {
     const token = window.localStorage.getItem("token");
+    Pledge.project_id = projectData.id;
+    debugger;
     const response = await fetch(`${process.env.REACT_APP_API_URL}pledges/`, {
       method: "post",
       headers: {
@@ -32,7 +34,7 @@ function Pledges() {
         Authorization: `Token ${token}`,
       },
       body: JSON.stringify({
-        ...credentials,
+        ...Pledge,
       }),
     });
     return response.json();
@@ -53,15 +55,6 @@ function Pledges() {
   return (
     <form className="PledgesForm">
       <div>
-        <label htmlFor="project_id"> Project:</label>
-        <input
-          type="number"
-          id="project_id"
-          placeholder="Enter title"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
         <label htmlFor="amount"> Goal:</label>
         <input
           type="Number"
@@ -76,15 +69,6 @@ function Pledges() {
           type="text"
           id="comment"
           placeholder="Enter comment"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="supporter_id"> Supporter:</label>
-        <input
-          type="number"
-          id="supporter_id"
-          placeholder="supporter id"
           onChange={handleChange}
         />
       </div>
