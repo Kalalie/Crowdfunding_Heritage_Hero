@@ -4,7 +4,7 @@ import { createBrowserHistory } from "history";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/HomePage";
-import Projects from "./Pages/Projects";
+import Projects from "./Pages/Projects/Projects";
 import LoginPage from "./Pages/LoginPage";
 import SignupPage from "./Pages/SignupPage";
 import NotFound from "./Components/404Page/404";

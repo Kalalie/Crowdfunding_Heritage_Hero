@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Moment from "react-moment";
-import Pledges from "../Components/Pledges/Pledges";
+import Pledges from "../../Components/Pledges/Pledges";
+import "./Projects.css";
 
 function Projects() {
   const [projectData, setProjectData] = useState({ pledges: [] });
@@ -18,7 +19,7 @@ function Projects() {
   }, []);
 
   return (
-    <div>
+    <div id="ProjectPage">
       <h2>{projectData.title}</h2>
       <h3>
         Created at:
