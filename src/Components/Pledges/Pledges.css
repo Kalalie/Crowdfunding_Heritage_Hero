@@ -1,0 +1,32 @@
+input {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+label {
+  color: #00073d;
+  display: flex;
+  flex-direction: column;
+}
+
+.PledgesButton {
+  color: white;
+  background-color: #00073d;
+  border: none;
+  border-radius: 4px;
+  width: 30%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.PledgesForm {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 50px;
+}
