@@ -32,7 +32,8 @@ function Projects() {
           projectData.pledges.map((pledgeData, key) => {
             return (
               <li>
-                {pledgeData.amount} from {pledgeData.supporter_id}
+                {pledgeData.amount} from {""}
+                {pledgeData.anonymous ? "anonymous" : pledgeData.supporter}
               </li>
             );
           })}
