@@ -25,9 +25,8 @@ function Pledges({ projectData }) {
 
   const postData = async () => {
     const token = window.localStorage.getItem("token");
-    console.log(Pledge.project_id, projectData.id);
+    console.log(Pledge, projectData);
     Pledge.project_id = projectData.id;
-    debugger;
     const response = await fetch(`${process.env.REACT_APP_API_URL}pledges/`, {
       method: "post",
       headers: {

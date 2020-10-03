@@ -31,7 +31,7 @@ function Projects() {
         {projectData.pledges &&
           projectData.pledges.map((pledgeData, key) => {
             return (
-              <li>
+              <li key={key}>
                 {pledgeData.amount} from {""}
                 {pledgeData.anonymous ? "anonymous" : pledgeData.supporter}
               </li>
@@ -42,10 +42,10 @@ function Projects() {
       <ul>
         {projectData.pledges &&
           projectData.pledges.map((pledgeData, key) => {
-            return <li>{pledgeData.comment}</li>;
+            return <li key={key}>{pledgeData.comment}</li>;
           })}
         <h3>Pledge on this project </h3>
-        <Pledges />
+        <Pledges projectData={projectData} />
       </ul>
     </div>
   );
