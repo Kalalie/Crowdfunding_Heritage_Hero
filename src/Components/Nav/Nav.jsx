@@ -31,12 +31,6 @@ function Nav(props) {
         </div>
 
         <div className="ButtonPosition">
-          <div>
-            {" "}
-            <button className="Button">
-              <Link to="/profile/">My Profile</Link>
-            </button>
-          </div>
           {!loggedIn ? (
             <>
               <button className="Button">
@@ -47,14 +41,16 @@ function Nav(props) {
               </button>
             </>
           ) : (
-            //    <button className="Button">
-            //    <Link to="/profile/{}">My Profile</Link>
-            //  </button>
-            <button className="Button">
-              <Link to="/" onClick={logout}>
-                Logout
-              </Link>
-            </button>
+            <div>
+              <button className="Button">
+                <Link to="/profile/{}">My Profile</Link>
+              </button>
+              <button className="Button">
+                <Link to="/" onClick={logout}>
+                  Logout
+                </Link>
+              </button>
+            </div>
           )}
         </div>
       </div>
