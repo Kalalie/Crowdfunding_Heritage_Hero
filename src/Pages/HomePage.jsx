@@ -33,7 +33,6 @@ function HomePage() {
   //template
   return (
     <div>
-      <FeaturedImage image={require("../Assets/MotheChandeniers.jpg")} />
       <h1> Projects </h1>
       <SearchBar />
       <div id="project-list">

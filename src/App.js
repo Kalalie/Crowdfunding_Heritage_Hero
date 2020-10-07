@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import "./App.css";
@@ -9,6 +9,8 @@ import LoginPage from "./Pages/LoginPage";
 import SignupPage from "./Pages/SignupPage";
 import NotFound from "./Components/404Page/404";
 import CreateProject from "./Pages/CreateProject";
+import ProfilePage from "./Pages/ProfilePage/ProfilePage";
+import UpdateProject from "./Pages/UpdateProject/UpdateProjectPage";
 
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -21,8 +23,11 @@ function App() {
       <div>
         <Nav image={require("./Assets/HeritageHeroLogo.png")} />
         <Switch>
-          <Route path="/project/:id">
+          <Route exact path="/project/:id">
             <Projects />
+          </Route>
+          <Route path="/project/edit/:id">
+            <UpdateProject />
           </Route>
           <Route path="/login">
             <LoginPage />
@@ -32,6 +37,9 @@ function App() {
           </Route>
           <Route path="/create-project">
             <CreateProject />
+          </Route>
+          <Route path="/profile/:username/">
+            <ProfilePage />
           </Route>
           <Route exact path="/">
             <Home />

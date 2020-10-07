@@ -1,44 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import "./CreateProjectForm.css";
 
-function CreateProjectForm() {
+function UpdateProjectForm({ initProjectDetails }) {
   // variables
-  const [credentials, setCredentials] = useState({
-    title: "",
-    description: "",
-    goal: "",
-    image: "",
-    date_created: "",
-    is_open: "",
-  });
+  // console.log(initProjectDetails);
+  const [projectDetails, setprojectDetails] = useState(initProjectDetails);
 
   const history = useHistory();
 
-  // methods
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setCredentials((prevCredentials) => ({
-      ...prevCredentials,
+    setprojectDetails((newprojectDetails) => ({
+      ...newprojectDetails,
       [id]: value,
     }));
-  };
-
-  const postData = async () => {
-    const token = window.localStorage.getItem("token");
-    console.log(token);
-    const response = await fetch(`${process.env.REACT_APP_API_URL}projects/`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Token ${token}`,
-      },
-      body: JSON.stringify({
-        ...credentials,
-        date_created: new Date(credentials.date_created).toISOString(),
-      }),
-    });
-    return response.json();
   };
 
   const handleSubmit = (e) => {
@@ -46,11 +21,33 @@ function CreateProjectForm() {
     if (true) {
       postData()
         .then((response) => {
-          // window.localStorage.setItem("token", response.token);
-          history.push("/");
+          history.push(`/project/${projectDetails.id}`);
         })
         .catch((error) => console.log(error));
     }
+  };
+  const postData = async () => {
+    const token = window.localStorage.getItem("token");
+    console.log(projectDetails);
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}projects/${projectDetails.id}`,
+      {
+        method: "put",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Token ${token}`,
+        },
+        body: JSON.stringify({
+          title: projectDetails.title,
+          description: projectDetails.description,
+          goal: projectDetails.goal,
+          image: projectDetails.image,
+          date_created: projectDetails.date_created,
+          is_open: projectDetails.is_open,
+        }),
+      }
+    );
+    return response.json();
   };
 
   //template
@@ -61,7 +58,7 @@ function CreateProjectForm() {
         <input
           type="text"
           id="title"
-          placeholder="Enter title"
+          value={projectDetails.title}
           onChange={handleChange}
         />
       </div>
@@ -70,7 +67,7 @@ function CreateProjectForm() {
         <input
           type="text"
           id="description"
-          placeholder="Enter descrption"
+          value={projectDetails.description}
           onChange={handleChange}
         />
       </div>
@@ -79,7 +76,7 @@ function CreateProjectForm() {
         <input
           type="boolean"
           id="is_open"
-          placeholder="Project is opened"
+          value={projectDetails.is_open}
           onChange={handleChange}
         />
       </div>
@@ -88,7 +85,7 @@ function CreateProjectForm() {
         <input
           type="date"
           id="date_created"
-          placeholder="date"
+          value={projectDetails.date}
           onChange={handleChange}
         />
       </div>
@@ -97,23 +94,28 @@ function CreateProjectForm() {
         <input
           type="Number"
           id="goal"
-          placeholder="Enter Goal"
+          value={projectDetails.goal}
           onChange={handleChange}
         />
       </div>
       <div>
         <label htmlFor="image"> Image:</label>
-        <input type="url" id="image" onChange={handleChange} />
+        <input
+          type="url"
+          id="image"
+          value={projectDetails.image}
+          onChange={handleChange}
+        />
       </div>
       <button
         className="ButtonCreateProject"
         type="submit"
         onClick={handleSubmit}
       >
-        Create Project
+        Update Project
       </button>
     </form>
   );
 }
 
-export default CreateProjectForm;
+export default UpdateProjectForm;
